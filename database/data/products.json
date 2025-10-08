@@ -1,0 +1,272 @@
+[
+    {
+        "name": "Classic White T-Shirt",
+        "slug": "classic-white-tshirt",
+        "description": "Comfortable cotton t-shirt, regular fit.",
+        "price": 299,
+        "image": "https://plus.unsplash.com/premium_photo-1727942419701-0428352a21e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2xhc3NpYyUyMFdoaXRlJTIwVC1TaGlydHxlbnwwfHwwfHx8MA%3D%3D",
+        "stock": 120,
+        "category": "Apparel"
+    },
+    {
+        "name": "Blue Denim Jeans",
+        "slug": "blue-denim-jeans",
+        "description": "Slim fit denim jeans with stretch.",
+        "price": 1499,
+        "image": "https://plus.unsplash.com/premium_photo-1674828601362-afb73c907ebe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Qmx1ZSUyMERlbmltJTIwSmVhbnN8ZW58MHx8MHx8fDA%3D",
+        "stock": 60,
+        "category": "Apparel"
+    },
+    {
+        "name": "Sports Running Shoes",
+        "slug": "sports-running-shoes",
+        "description": "Lightweight running shoes with breathable mesh.",
+        "price": 2499,
+        "image": "https://images.unsplash.com/photo-1709258228137-19a8c193be39?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3BvcnRzJTIwUnVubmluZyUyMFNob2VzfGVufDB8fDB8fHww",
+        "stock": 40,
+        "category": "Footwear"
+    },
+    {
+        "name": "Leather Wallet",
+        "slug": "leather-wallet",
+        "description": "Genuine leather wallet with multiple slots.",
+        "price": 899,
+        "image": "https://images.unsplash.com/photo-1620109176813-e91290f6c795?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TGVhdGhlciUyMFdhbGxldHxlbnwwfHwwfHx8MA%3D%3D",
+        "stock": 80,
+        "category": "Accessories"
+    },
+    {
+        "name": "Smart Watch Pro",
+        "slug": "smart-watch-pro",
+        "description": "Fitness tracking and notifications.",
+        "price": 5999,
+        "image": "https://images.unsplash.com/photo-1655215920713-94440bf7213f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U21hcnQlMjBXYXRjaCUyMFByb3xlbnwwfHwwfHx8MA%3D%3D",
+        "stock": 25,
+        "category": "Electronics"
+    },
+    {
+        "name": "Noise Cancelling Headphones",
+        "slug": "noise-cancelling-headphones",
+        "description": "Over-ear headphones with ANC.",
+        "price": 7999,
+        "image": "https://images.unsplash.com/photo-1612478120679-5b7412e15f84?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Tm9pc2UlMjBDYW5jZWxsaW5nJTIwSGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D",
+        "stock": 30,
+        "category": "Electronics"
+    },
+    {
+        "name": "Backpack 30L",
+        "slug": "backpack-30l",
+        "description": "Durable backpack with laptop sleeve.",
+        "price": 1599,
+        "image": "https://images.unsplash.com/photo-1681334921874-5bafe8acf433?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QmFja3BhY2slMjAzMEx8ZW58MHx8MHx8fDA%3D",
+        "stock": 70,
+        "category": "Bags"
+    },
+    {
+        "name": "Sunglasses UV400",
+        "slug": "sunglasses-uv400",
+        "description": "Polarized sunglasses with UV protection.",
+        "price": 799,
+        "image": "https://plus.unsplash.com/premium_photo-1672883552600-a2bfa0a34fbf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U3VuZ2xhc3NlcyUyMFVWNDAwfGVufDB8fDB8fHww",
+        "stock": 90,
+        "category": "Accessories"
+    },
+    {
+        "name": "Ceramic Mug 350ml",
+        "slug": "ceramic-mug-350ml",
+        "description": "Microwave-safe ceramic mug.",
+        "price": 299,
+        "image": "https://images.unsplash.com/photo-1649715985817-615afa0cdd1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q2VyYW1pYyUyME11ZyUyMDM1MG1sfGVufDB8fDB8fHww",
+        "stock": 200,
+        "category": "Home"
+    },
+    {
+        "name": "Desk Lamp LED",
+        "slug": "desk-lamp-led",
+        "description": "Adjustable LED lamp with touch control.",
+        "price": 1299,
+        "image": "https://images.unsplash.com/photo-1735186534663-805815e21495?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8RGVzayUyMExhbXAlMjBMRUR8ZW58MHx8MHx8fDA%3D",
+        "stock": 50,
+        "category": "Home"
+    },
+    {
+        "name": "Wireless Charger",
+        "slug": "wireless-charger",
+        "description": "Fast Qi wireless charging pad.",
+        "price": 999,
+        "image": "https://images.unsplash.com/photo-1603674554159-b62f6febbce5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8V2lyZWxlc3MlMjBDaGFyZ2VyfGVufDB8fDB8fHww",
+        "stock": 120,
+        "category": "Electronics"
+    },
+    {
+        "name": "Bluetooth Speaker",
+        "slug": "bluetooth-speaker",
+        "description": "Portable speaker, 12 hours battery.",
+        "price": 2199,
+        "image": "https://images.unsplash.com/photo-1589003077984-894e133dabab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Qmx1ZXRvb3RoJTIwU3BlYWtlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "stock": 40,
+        "category": "Electronics"
+    },
+    {
+        "name": "Yoga Mat 6mm",
+        "slug": "yoga-mat-6mm",
+        "description": "Non-slip yoga mat for workouts.",
+        "price": 699,
+        "image": "https://images.unsplash.com/photo-1758599879795-536d5f203de9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8WW9nYSUyME1hdCUyMDZtbXxlbnwwfHwwfHx8MA%3D%3D",
+        "stock": 110,
+        "category": "Sports"
+    },
+    {
+        "name": "Stainless Steel Bottle 1L",
+        "slug": "stainless-steel-bottle-1l",
+        "description": "Vacuum insulated water bottle.",
+        "price": 799,
+        "image": "https://images.unsplash.com/photo-1698419977302-7b2769dfa588?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFN0YWlubGVzcyUyMFN0ZWVsJTIwQm90dGxlJTIwMUx8ZW58MHx8MHx8fDA%3D",
+        "stock": 150,
+        "category": "Home"
+    },
+    {
+        "name": "Gaming Mouse",
+        "slug": "gaming-mouse",
+        "description": "High DPI gaming mouse with RGB.",
+        "price": 2499,
+        "image": "https://images.unsplash.com/photo-1629429408209-1f912961dbd8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8R2FtaW5nJTIwTW91c2V8ZW58MHx8MHx8fDA%3D",
+        "stock": 60,
+        "category": "Electronics"
+    },
+    {
+        "name": "Cotton Bedsheet King",
+        "slug": "cotton-bedsheet-king",
+        "description": "Soft breathable bedsheet set.",
+        "price": 2599,
+        "image": "https://images.unsplash.com/photo-1705738640108-9167bc2e42da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q290dG9uJTIwQmVkc2hlZXQlMjBLaW5nfGVufDB8fDB8fHww",
+        "stock": 35,
+        "category": "Home"
+    },
+    {
+        "name": "Kitchen Knife Set",
+        "slug": "kitchen-knife-set",
+        "description": "Stainless steel 5 piece knife set.",
+        "price": 1999,
+        "image": "https://images.unsplash.com/photo-1589071634465-75d7ce737fa8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8S2l0Y2hlbiUyMEtuaWZlJTIwU2V0fGVufDB8fDB8fHww",
+        "stock": 45,
+        "category": "Home"
+    },
+    {
+        "name": "Action Camera 4K",
+        "slug": "action-camera-4k",
+        "description": "4K waterproof action camera.",
+        "price": 8999,
+        "image": "https://plus.unsplash.com/premium_photo-1710961233810-5350d81d4b20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QWN0aW9uJTIwQ2FtZXJhJTIwNEt8ZW58MHx8MHx8fDA%3D",
+        "stock": 15,
+        "category": "Electronics"
+    },
+    {
+        "name": "Kids Toy Car",
+        "slug": "kids-toy-car",
+        "description": "Battery operated toy car.",
+        "price": 1499,
+        "image": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEtpZHMlMjBUb3klMjBDYXJ8ZW58MHx8MHx8fDA%3D",
+        "stock": 120,
+        "category": "Toys"
+    },
+    {
+        "name": "Office Chair Ergonomic",
+        "slug": "office-chair-ergonomic",
+        "description": "Lumbar support ergonomic chair.",
+        "price": 6999,
+        "image": "https://images.unsplash.com/photo-1688578735972-b61ec274df7b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8T2ZmaWNlJTIwQ2hhaXIlMjBFcmdvbm9taWN8ZW58MHx8MHx8fDA%3D",
+        "stock": 20,
+        "category": "Furniture"
+    },
+    {
+        "name": "Wireless Earbuds",
+        "slug": "wireless-earbuds",
+        "description": "True wireless earbuds with charging case.",
+        "price": 2999,
+        "image": "https://images.unsplash.com/photo-1590658006821-04f4008d5717?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8V2lyZWxlc3MlMjBFYXJidWRzfGVufDB8fDB8fHww",
+        "stock": 80,
+        "category": "Electronics"
+    },
+    {
+        "name": "Graphic T-Shirt",
+        "slug": "graphic-tshirt",
+        "description": "Printed graphic tee with soft cotton.",
+        "price": 499,
+        "image": "https://images.unsplash.com/photo-1755018097060-682f291aad30?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8R3JhcGhpYyUyMFQtU2hpcnR8ZW58MHx8MHx8fDA%3D",
+        "stock": 130,
+        "category": "Apparel"
+    },
+    {
+        "name": "Women's Handbag",
+        "slug": "womens-handbag",
+        "description": "Stylish handbag with inner pockets.",
+        "price": 3499,
+        "image": "https://images.unsplash.com/photo-1751522937993-46b83342398b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8V29tZW4ncyUyMEhhbmRiYWd8ZW58MHx8MHx8fDA%3D",
+        "stock": 55,
+        "category": "Bags"
+    },
+    {
+        "name": "Portable Projector",
+        "slug": "portable-projector",
+        "description": "Mini projector for home cinema.",
+        "price": 9999,
+        "image": "https://plus.unsplash.com/premium_photo-1710522706863-71b117956d4b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UG9ydGFibGUlMjBQcm9qZWN0b3J8ZW58MHx8MHx8fDA%3D",
+        "stock": 10,
+        "category": "Electronics"
+    },
+    {
+        "name": "Running Shorts",
+        "slug": "running-shorts",
+        "description": "Lightweight shorts for running.",
+        "price": 599,
+        "image": "https://images.unsplash.com/photo-1602190420103-683df5093e86?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UnVubmluZyUyMFNob3J0c3xlbnwwfHwwfHx8MA%3D%3D",
+        "stock": 90,
+        "category": "Apparel"
+    },
+    {
+        "name": "Wall Art Print",
+        "slug": "wall-art-print",
+        "description": "Canvas wall art for living room.",
+        "price": 1299,
+        "image": "https://images.unsplash.com/photo-1684741892637-c79b2e635921?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8V2FsbCUyMEFydCUyMFByaW50fGVufDB8fDB8fHww",
+        "stock": 75,
+        "category": "Home"
+    },
+    {
+        "name": "Travel Adapter",
+        "slug": "travel-adapter",
+        "description": "Universal power adapter for travelers.",
+        "price": 499,
+        "image": "https://images.unsplash.com/photo-1610497202970-0a42b1fe2b83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VHJhdmVsJTIwQWRhcHRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "stock": 200,
+        "category": "Electronics"
+    },
+    {
+        "name": "Kids Building Blocks",
+        "slug": "kids-building-blocks",
+        "description": "Plastic building blocks set.",
+        "price": 799,
+        "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8S2lkcyUyMEJ1aWxkaW5nJTIwQmxvY2tzfGVufDB8fDB8fHww",
+        "stock": 140,
+        "category": "Toys"
+    },
+    {
+        "name": "Hair Dryer Pro",
+        "slug": "hair-dryer-pro",
+        "description": "Fast dry hair dryer with multiple modes.",
+        "price": 2199,
+        "image": "https://plus.unsplash.com/premium_photo-1661454105842-21cc664b9aa8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8SGFpciUyMERyeWVyJTIwUHJvfGVufDB8fDB8fHww",
+        "stock": 45,
+        "category": "Home"
+    },
+    {
+        "name": "Smart Lamp",
+        "slug": "smart-lamp",
+        "description": "WiFi controllable smart lamp.",
+        "price": 1799,
+        "image": "https://images.unsplash.com/photo-1617032641876-a09861d5ef7b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U21hcnQlMjBMYW1wfGVufDB8fDB8fHww",
+        "stock": 60,
+        "category": "Home"
+    }
+]
