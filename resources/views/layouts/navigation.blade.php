@@ -6,8 +6,8 @@
     <title>EcommerceApp</title>
     @vite('resources/css/app.css')
     <style>
-        body {
-            background: linear-gradient(135deg, #697786ff 0%, #6498bbff 50%, #6486c4ff 100%);
+        body nav {
+            background: linear-gradient(135deg, #a1aab5ff 0%, #6498bbff 50%, #6486c4ff 100%);
             font-family: 'Poppins', sans-serif;
         }
     </style>
