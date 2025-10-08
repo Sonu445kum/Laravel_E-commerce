@@ -3,12 +3,17 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Product; // If you are using Product model
+use App\Models\Product;
 
 class ProductsSeeder extends Seeder
 {
     public function run()
     {
-        // your seeding logic
+        $json = file_get_contents(database_path('data/products.json'));
+        $products = json_decode($json, true);
+
+        foreach ($products as $product) {
+            Product::create($product);
+        }
     }
 }
