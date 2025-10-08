@@ -7,10 +7,8 @@ use App\Http\Controllers\Admin\ProductAdminController;
 
 //  Homepage — sabhi products list karega
 Route::get('/', [ProductController::class, 'index'])->name('products.index');
-
 //  Single Product Page
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
-
 //  Dashboard (protected route)
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -9,23 +9,23 @@
         {{-- Left Section - Product Image --}}
         <div class="flex-1 flex justify-center items-center">
             <img src="{{ $product->image }}" alt="{{ $product->name }}"
-                 class="w-full max-w-md h-[400px] object-contain rounded-2xl border border-gray-200 hover:scale-105 transition-transform duration-300">
+                 class="w-full max-w-md h-[400px] object-contain rounded-2xl border border-black-500 hover:scale-105 transition-transform duration-300">
         </div>
 
         {{-- Right Section - Product Details --}}
         <div class="flex-1 flex flex-col justify-between">
             <div>
                 <h1 class="text-3xl font-extrabold text-indigo-700 tracking-wide">{{ $product->name }}</h1>
-                <p class="text-gray-600 mt-3 leading-relaxed">{{ $product->description }}</p>
+                <p class="text-black-600 mt-3 leading-relaxed">{{ $product->description }}</p>
 
                 <div class="flex items-center gap-2 mt-4">
-                    <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">4.5 ★</span>
-                    <span class="text-gray-500 text-sm">(245 ratings & 60 reviews)</span>
+                    <span class="bg-green-500 text-black text-xs px-2 py-1 rounded">4.5 ★</span>
+                    <span class="text-black-500 text-sm">(245 ratings & 60 reviews)</span>
                 </div>
 
                 <div class="mt-5">
                     <span class="text-4xl font-bold text-green-600">₹{{ $product->price }}</span>
-                    <p class="text-sm text-gray-500 mt-1">Inclusive of all taxes</p>
+                    <p class="text-sm text-black-500 mt-1">Inclusive of all taxes</p>
                 </div>
             </div>
 
