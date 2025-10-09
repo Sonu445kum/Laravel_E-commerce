@@ -1,1 +1,1 @@
-<img src="{{ asset('images/ecommerceLogo.png') }}" alt="Ecommerce Logo" {{ $attributes }} class="w-20 h-20">
+<img src="{{ asset('images/ecommerceLogo.png') }}" alt="{{ config('app.name') }}" class="w-20 h-20">
