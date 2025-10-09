@@ -1,11 +1,12 @@
-
-
 <head>
-    
+
     <title>EcommerceApp</title>
     @vite('resources/css/app.css')
     <style>
-        body nav { font-family: 'Poppins', sans-serif; background-color: #316fccff; }
+        body nav {
+            font-family: 'Poppins', sans-serif;
+            background-color: #316fccff;
+        }
     </style>
 </head>
 
@@ -18,11 +19,14 @@
 
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="{{ route('products.index') }}"
-                        class="text-2xl md:text-3xl font-extrabold text-white tracking-wide hover:scale-105 transition-transform duration-300 drop-shadow-lg">
-                        <span class="text-yellow-300">E</span>commerce<span class="text-pink-300">App</span>
+                    <a href="{{ route('products.index') }}" class="flex items-center space-x-2">
+                        <!-- Custom Logo -->
+                        <img src="{{ asset('images/ecommerceLogo.png') }}" alt="EcommerceApp" class="w-8 h-6">
+                        <!-- App Name -->
+                        <span class="text-2xl md:text-3xl font-extrabold text-white drop-shadow-lg">EcommerceApp</span>
                     </a>
                 </div>
+
 
                 <!-- Nav Links & Cart & Auth -->
                 <div class="flex items-center space-x-8 lg:space-x-10">
@@ -37,38 +41,38 @@
                     <a href="{{ route('cart.index') }}" class="relative text-white hover:text-yellow-300 transition px-2 lg:px-3">
                         🛒Cart
                         @if(session('cart') && count(session('cart')) > 0)
-                            <span class="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                                {{ count(session('cart')) }}
-                            </span>
+                        <span class="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                            {{ count(session('cart')) }}
+                        </span>
                         @endif
                     </a>
 
                     <!-- Auth / Admin -->
                     @auth
-                        @if(auth()->user()->role === 'admin')
-                            <a href="{{ route('admin.products.index') }}"
-                               class="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow-md hover:scale-105 hover:bg-yellow-300 transition-all duration-300">
-                               Admin
-                            </a>
-                        @endif
+                    @if(auth()->user()->role === 'admin')
+                    <a href="{{ route('admin.products.index') }}"
+                        class="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow-md hover:scale-105 hover:bg-yellow-300 transition-all duration-300">
+                        Admin
+                    </a>
+                    @endif
 
-                        <span class="text-white font-medium px-2 lg:px-3">{{ auth()->user()->name }}</span>
+                    <span class="text-white font-medium px-2 lg:px-3">{{ auth()->user()->name }}</span>
 
-                        <a href="{{ route('logout') }}"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                           class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
-                           Logout
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
                     @else
-                        <a href="{{ route('login') }}"
-                           class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
-                           Login
-                        </a>
-                        <a href="{{ route('register') }}"
-                           class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
-                           Register
-                        </a>
+                    <a href="{{ route('login') }}"
+                        class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
+                        Login
+                    </a>
+                    <a href="{{ route('register') }}"
+                        class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
+                        Register
+                    </a>
                     @endauth
                 </div>
 
@@ -90,8 +94,6 @@
         </div>
         <p class="text-sm text-white/80">&copy; {{ date('Y') }} <span class="font-semibold text-white">EcommerceApp</span> — All Rights Reserved.</p>
     </footer>
-  
-        
-    </body>
 
 
+</body>
