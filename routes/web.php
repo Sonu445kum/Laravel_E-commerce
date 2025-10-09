@@ -4,43 +4,36 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ProductAdminController;
-use App\Http\Controllers\PaymentController; // Stripe Payment Controller
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
-| Public Pages
+| Public Routes
 |--------------------------------------------------------------------------
 */
 
-// Homepage — by default sabhi products list karega
+// Homepage — All Products
 Route::get('/', [ProductController::class, 'index'])->name('products.index');
 
 // Single Product Page
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
-// Add to cart
+// Cart Management
+Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index'); // ✅ updated
 Route::post('/cart/add/{id}', [ProductController::class, 'addToCart'])->name('cart.add');
-
-// Cart index
-Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index');
-
-// Remove item from cart
 Route::post('/cart/remove/{id}', [ProductController::class, 'removeFromCart'])->name('cart.remove');
 
+// Checkout Page
+Route::get('/checkout', [ProductController::class, 'checkout'])->name('checkout');
+
 // Stripe Payment Routes
-Route::post('/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
+Route::post('/payment/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
 Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
 Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
 
-// About page
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-// Contact page
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+// Static Pages
+Route::view('/about', 'about')->name('about');
+Route::view('/contact', 'contact')->name('contact');
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +47,7 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->middleware(['verified'])->name('dashboard');
 
-    // Profile
+    // Profile Routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -65,13 +58,16 @@ Route::middleware(['auth'])->group(function () {
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth', 'isAdmin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::resource('products', ProductAdminController::class);
-});
+Route::middleware(['auth', 'isAdmin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('products', ProductAdminController::class);
+    });
 
 /*
 |--------------------------------------------------------------------------
-| Auth Routes (Breeze/Jetstream)
+| Auth Routes (Laravel Breeze)
 |--------------------------------------------------------------------------
 */
 require __DIR__ . '/auth.php';

@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>EcommerceApp</title>
     @vite('resources/css/app.css')
     <style>
@@ -92,6 +90,8 @@
         </div>
         <p class="text-sm text-white/80">&copy; {{ date('Y') }} <span class="font-semibold text-white">EcommerceApp</span> — All Rights Reserved.</p>
     </footer>
+  
+        
+    </body>
 
-</body>
-</html>
+
