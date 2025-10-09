@@ -1,59 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto py-10 px-4">
+<div class="products-section">
 
-    <!-- Centered Heading -->
-    <div class="flex justify-center mb-10">
-        <h1 class="text-xl font-extrabold text-gray-900 tracking-wide text-center">
-            Our Products
-        </h1>
+    <!-- Page Heading -->
+    <div class="heading">
+        <h1>Our Products</h1>
+        <p>Check out our latest products and deals!</p>
     </div>
 
-    <!-- Product Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Products Grid -->
+    <div class="products-grid">
         @foreach($products as $product)
-        <div class="bg-white rounded-2xl shadow-lg hover:shadow-indigo-300/50 transition-all duration-300 border border-gray-100 flex flex-col">
+        <div class="product-card">
 
             <!-- Product Image -->
-            <div class="w-full flex justify-center items-center p-4 h-[180px] bg-gray-50 rounded-t-2xl">
-                <img src="{{ $product->image }}" alt="{{ $product->name }}"
-                     class="max-h-[120px] w-auto object-contain transition-transform duration-300 hover:scale-105">
+            <div class="product-image">
+                <img src="{{ $product->image }}" alt="{{ $product->name }}">
             </div>
 
             <!-- Product Info -->
-            <div class="px-4 py-3 flex-1 flex flex-col justify-between">
-                <div>
-                    <h2 class="text-lg font-semibold text-gray-800 truncate">{{ $product->name }}</h2>
-                    <p class="text-gray-500 text-sm mt-1">{{ Str::limit($product->description, 60) }}</p>
-                </div>
+            <div class="product-info">
+                <h2>{{ $product->name }}</h2>
+                <p>{{ Str::limit($product->description, 80) }}</p>
+                <p class="price">₹{{ $product->price }}</p>
+            </div>
 
-                <div class="mt-3">
-                    <p class="text-green-600 font-bold text-lg">₹{{ $product->price }}</p>
-                </div>
+            <!-- Product Actions -->
+            <div class="product-actions">
+                <!-- Add to Cart -->
+                <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn-cart">🛒 Add to Cart</button>
+                </form>
 
-                <!-- Buttons -->
-                <div class="mt-4 flex flex-col gap-2">
-                    <!-- Add to Cart Form -->
-                    <form action="{{ route('cart.add', $product->id) }}" method="POST">
-                        @csrf
-                        <button type="submit"
-                                class="w-full !bg-green-500 hover:!bg-green-600 text-black py-2 rounded-lg shadow-md transition font-semibold">
-                            🛒 Add to Cart
-                        </button>
-                    </form>
-
-                    <!-- Buy Now Form (Stripe Checkout) -->
-                    <form action="{{ route('payment.checkout') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="name" value="{{ $product->name }}">
-                        <input type="hidden" name="price" value="{{ $product->price }}">
-                        <button type="submit"
-                                class="w-full !bg-orange-500 hover:!bg-red-600 text-black py-2 rounded-lg shadow-md transition font-semibold">
-                            ⚡ Buy Now
-                        </button>
-                    </form>
-                </div>
+                <!-- Buy Now -->
+                <form action="{{ route('payment.checkout') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="name" value="{{ $product->name }}">
+                    <input type="hidden" name="price" value="{{ $product->price }}">
+                    <button type="submit" class="btn-buy">⚡ Buy Now</button>
+                </form>
             </div>
         </div>
         @endforeach

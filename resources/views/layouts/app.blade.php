@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,29 +13,44 @@
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+
 
 
 
     <style>
         /* Background animation for subtle motion */
         @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Main layout styling */
-        main, footer, header {
+        main,
+        footer,
+        header {
             width: 100%;
         }
 
         /* Navbar specific styling */
         nav.navbar {
             font-family: 'Poppins', sans-serif;
-            background-color: #316fccff; /* tumhara custom navbar color */
+            background-color: #316fccff;
+            /* tumhara custom navbar color */
         }
     </style>
 </head>
+
 <body class="font-sans antialiased min-h-screen flex flex-col text-gray-900">
 
     {{-- Navigation Bar --}}
@@ -55,4 +71,5 @@
     </footer>
 
 </body>
+
 </html>

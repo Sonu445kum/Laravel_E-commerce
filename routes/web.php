@@ -20,7 +20,7 @@ Route::get('/', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 // Cart Management
-Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index'); // ✅ updated
+Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index'); //  updated
 Route::post('/cart/add/{id}', [ProductController::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/remove/{id}', [ProductController::class, 'removeFromCart'])->name('cart.remove');
 
