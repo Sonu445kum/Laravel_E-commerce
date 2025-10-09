@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="px-4 py-10 max-w-7xl mx-auto">
+<div class="container mx-auto px-4 py-10 max-w-7xl">
 
     <div class="bg-white shadow-2xl rounded-2xl p-8 flex flex-col lg:flex-row gap-10 transition hover:shadow-indigo-300/40">
 
         <!-- Left Section - Product Image -->
         <div class="flex-1 flex justify-center items-center">
-    <img src="{{ $product->image }}" alt="{{ $product->name }}"
-         class="max-w-[100px] max-h-[100px] w-auto object-contain rounded-2xl border border-gray-300 hover:scale-105 transition-transform duration-300 cursor-pointer shadow-sm">
-</div>
-
+            <img src="{{ $product->image }}" alt="{{ $product->name }}"
+                 class="max-w-[300px] max-h-[300px] w-auto object-contain rounded-2xl border border-gray-300 shadow-sm">
+        </div>
 
         <!-- Right Section - Product Details -->
         <div class="flex-1 flex flex-col justify-between">
@@ -37,14 +36,22 @@
 
             <!-- Buttons -->
             <div class="mt-10 flex flex-wrap gap-4">
-                <button class="flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white text-lg lg:text-xl font-semibold px-6 py-3 rounded-lg shadow-md transition hover:scale-105">
-                    🛒 Add to Cart
-                </button>
+                <!-- Add to Cart Form -->
+                <form action="{{ route('cart.add', $product->id) }}" method="POST" class="flex-1">
+                    @csrf
+                    <button type="submit"
+                        class="flex w-full items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black text-lg lg:text-xl font-semibold px-6 py-3 rounded-lg shadow-md transition hover:scale-105">
+                        🛒 Add to Cart
+                    </button>
+                </form>
 
-                <button class="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white text-lg lg:text-xl font-semibold px-6 py-3 rounded-lg shadow-md transition hover:scale-105">
+                <!-- Buy Now Button -->
+                <button onclick="window.location='{{ route('products.show', $product->id) }}';"
+                    class="flex-1 flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-black text-lg lg:text-xl font-semibold px-6 py-3 rounded-lg shadow-md transition hover:scale-105">
                     ⚡ Buy Now
                 </button>
 
+                <!-- Back Button -->
                 <a href="{{ route('products.index') }}"
                    class="inline-flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-lg lg:text-xl font-medium px-6 py-3 rounded-lg shadow-sm transition hover:scale-105">
                    ← Back to Products
@@ -53,33 +60,4 @@
         </div>
     </div>
 </div>
-
-<!-- Optional: Zoom modal for product image -->
-<script>
-const productImage = document.querySelector('.object-contain.cursor-pointer');
-if(productImage) {
-    productImage.addEventListener('click', () => {
-        const modal = document.createElement('div');
-        modal.className = 'fixed inset-0 bg-black/70 flex justify-center items-center z-50';
-        modal.innerHTML = `<img src="${productImage.src}" class="max-h-[90vh] w-auto rounded-xl shadow-2xl animate-fadeIn cursor-pointer">`;
-        document.body.appendChild(modal);
-        document.body.classList.add('overflow-hidden');
-
-        modal.addEventListener('click', () => {
-            modal.remove();
-            document.body.classList.remove('overflow-hidden');
-        });
-    });
-}
-</script>
-
-<style>
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-}
-.animate-fadeIn {
-    animation: fadeIn 0.3s ease-out;
-}
-</style>
 @endsection

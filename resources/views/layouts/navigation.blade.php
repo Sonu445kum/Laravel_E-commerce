@@ -26,22 +26,35 @@
                     </a>
                 </div>
 
-                <!-- Nav Links -->
-                <div class="flex items-center space-x-8">
-                    <a href="{{ route('products.index') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300">Home</a>
-                    <a href="{{ route('products.index') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300">Shop</a>
-                    <a href="{{ route('about') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300">About</a>
-                    <a href="{{ route('contact') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300">Contact</a>
+                <!-- Nav Links & Cart & Auth -->
+                <div class="flex items-center space-x-8 lg:space-x-10">
 
+                    <!-- Links -->
+                    <a href="{{ route('products.index') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Home</a>
+                    <a href="{{ route('products.index') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Shop</a>
+                    <a href="{{ route('about') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">About</a>
+                    <a href="{{ route('contact') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Contact</a>
+
+                    <!-- Cart Icon -->
+                    <a href="{{ route('cart.index') }}" class="relative text-white hover:text-yellow-300 transition px-2 lg:px-3">
+                        🛒Cart
+                        @if(session('cart') && count(session('cart')) > 0)
+                            <span class="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                                {{ count(session('cart')) }}
+                            </span>
+                        @endif
+                    </a>
+
+                    <!-- Auth / Admin -->
                     @auth
                         @if(auth()->user()->role === 'admin')
                             <a href="{{ route('admin.products.index') }}"
-                                class="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow-md hover:scale-105 hover:bg-yellow-300 transition-all duration-300">
-                                Admin
+                               class="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow-md hover:scale-105 hover:bg-yellow-300 transition-all duration-300">
+                               Admin
                             </a>
                         @endif
 
-                        <span class="text-white font-medium">{{ auth()->user()->name }}</span>
+                        <span class="text-white font-medium px-2 lg:px-3">{{ auth()->user()->name }}</span>
 
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"

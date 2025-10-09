@@ -17,6 +17,22 @@ Route::get('/', [ProductController::class, 'index'])->name('products.index');
 // Single Product Page
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
+// Add to cart
+Route::post('/cart/add/{id}', [ProductController::class, 'addToCart'])->name('cart.add');
+
+// Cart index
+Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index');
+
+// Remove item from cart
+Route::post('/cart/remove/{id}', [ProductController::class, 'removeFromCart'])->name('cart.remove');
+
+// Checkout page (example)
+Route::get('/checkout', function () {
+    $cart = session()->get('cart', []);
+    return view('checkout', compact('cart'));
+})->name('checkout');
+
+
 // About page
 Route::get('/about', function () {
     return view('about');
