@@ -16,6 +16,17 @@
 - Tailwind CSS for modern UI
 
 ---
+
+### Payment Integration
+- Stripe payment integration for Buy Now button
+- Checkout flow redirects to Stripe hosted payment page
+- Payment success and cancel pages
+- Easily configurable with `.env` keys:
+  ```env
+  STRIPE_KEY=your_stripe_publishable_key
+  STRIPE_SECRET=your_stripe_secret_key
+
+  
 ## 🛠️ Requirements
 - PHP >= 8.x
 - Composer
