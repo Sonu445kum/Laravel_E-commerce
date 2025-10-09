@@ -25,13 +25,21 @@
         </div>
         @endforeach
 
+        <!-- Total & Checkout -->
         <div class="mt-6 text-right">
-            <p class="text-xl font-bold">
+            <p class="text-xl font-bold mb-4">
                 Total: ₹{{ array_sum(array_map(fn($i) => $i['price'] * $i['quantity'], $cart)) }}
             </p>
-            <a href="{{ route('checkout') }}" class="bg-green-600 text-white px-4 py-2 rounded-lg">
-                Proceed to Checkout
-            </a>
+
+            <!-- Stripe Checkout Form -->
+            <form action="{{ route('payment.checkout') }}" method="POST" class="inline-block">
+                @csrf
+                <!-- Pass total amount to checkout -->
+                <input type="hidden" name="amount" value="{{ array_sum(array_map(fn($i) => $i['price'] * $i['quantity'], $cart)) }}">
+                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+                    Proceed to Checkout
+                </button>
+            </form>
         </div>
     </div>
     @else

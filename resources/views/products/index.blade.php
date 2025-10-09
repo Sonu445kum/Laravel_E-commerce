@@ -2,7 +2,13 @@
 
 @section('content')
 <div class="container mx-auto py-10 px-4">
-    <h1 class="text-3xl font-extrabold text-center mb-10 text-gray-900 tracking-wide">Our Products</h1>
+
+    <!-- Centered Heading -->
+    <div class="flex justify-center mb-10">
+        <h1 class="text-xl font-extrabold text-gray-900 tracking-wide text-center">
+            Our Products
+        </h1>
+    </div>
 
     <!-- Product Cards Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -32,7 +38,7 @@
                     <form action="{{ route('cart.add', $product->id) }}" method="POST">
                         @csrf
                         <button type="submit"
-                            class="w-full bg-green-500 hover:bg-green-600 text-black py-2 rounded-lg shadow-md transition font-semibold">
+                                class="w-full !bg-green-500 hover:!bg-green-600 text-black py-2 rounded-lg shadow-md transition font-semibold">
                             🛒 Add to Cart
                         </button>
                     </form>
@@ -43,7 +49,7 @@
                         <input type="hidden" name="name" value="{{ $product->name }}">
                         <input type="hidden" name="price" value="{{ $product->price }}">
                         <button type="submit"
-                            class="w-full bg-red-500 hover:bg-red-600 text-black py-2 rounded-lg shadow-md transition font-semibold">
+                                class="w-full !bg-orange-500 hover:!bg-red-600 text-black py-2 rounded-lg shadow-md transition font-semibold">
                             ⚡ Buy Now
                         </button>
                     </form>
