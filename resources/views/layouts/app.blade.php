@@ -14,13 +14,13 @@
             100% { background-position: 0% 50%; }
         }
 
-        body {
-            background: linear-gradient(135deg, #e0f7fa, #ede7f6, #fce4ec);
+        /* body, nav {
+            background: linear-gradient(135deg, #869496ff, #cbbbe3ff, #eaa7beff);
             background-size: 400% 400%;
             animation: gradientMove 15s ease infinite;
             font-family: 'Poppins', sans-serif;
             margin: 0;
-        }
+        } */
 
         main, footer, header {
             width: 100%;
