@@ -9,36 +9,26 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Custom About Page CSS -->
+    <!-- Page Specific CSS -->
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/show.css') }}">
 
-
-
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 
     <style>
         /* Background animation for subtle motion */
         @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Main layout styling */
-        main,
-        footer,
-        header {
+        main, footer, header {
             width: 100%;
         }
 
@@ -46,7 +36,27 @@
         nav.navbar {
             font-family: 'Poppins', sans-serif;
             background-color: #316fccff;
-            /* tumhara custom navbar color */
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+
+        /* Container for content cards */
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .content-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
     </style>
 </head>
@@ -60,16 +70,13 @@
 
     {{-- Page Content --}}
     <main class="flex-grow w-full px-0 py-10">
-        <div class="bg-white/60 backdrop-blur-lg rounded-3xl shadow-2xl p-8 mx-4 sm:mx-6 lg:mx-8 transition hover:shadow-purple-300/40">
+        <div class="mx-4 sm:mx-6 lg:mx-8 content-wrapper">
             @yield('content')
         </div>
     </main>
 
     {{-- Footer --}}
-    <footer class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-6 text-center rounded-t-3xl shadow-inner w-full">
-        <p class="text-sm tracking-wide">&copy; {{ date('Y') }} {{ config('app.name', 'Ecommerce') }}. All rights reserved.</p>
-    </footer>
+    @include('layouts.footer')
 
 </body>
-
 </html>
