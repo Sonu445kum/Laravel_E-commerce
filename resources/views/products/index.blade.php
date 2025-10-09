@@ -37,11 +37,16 @@
                         </button>
                     </form>
 
-                    <!-- Buy Now Button -->
-                    <button onclick="window.location='{{ route('products.show', $product->id) }}';"
-                        class="w-full bg-red-500 hover:bg-red-600 text-black py-2 rounded-lg shadow-md transition font-semibold">
-                        ⚡ Buy Now
-                    </button>
+                    <!-- Buy Now Form (Stripe Checkout) -->
+                    <form action="{{ route('payment.checkout') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <button type="submit"
+                            class="w-full bg-red-500 hover:bg-red-600 text-black py-2 rounded-lg shadow-md transition font-semibold">
+                            ⚡ Buy Now
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

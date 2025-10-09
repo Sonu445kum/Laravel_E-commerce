@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ProductAdminController;
+use App\Http\Controllers\PaymentController; // Stripe Payment Controller
 
 /*
 |--------------------------------------------------------------------------
@@ -26,12 +27,10 @@ Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index');
 // Remove item from cart
 Route::post('/cart/remove/{id}', [ProductController::class, 'removeFromCart'])->name('cart.remove');
 
-// Checkout page (example)
-Route::get('/checkout', function () {
-    $cart = session()->get('cart', []);
-    return view('checkout', compact('cart'));
-})->name('checkout');
-
+// Stripe Payment Routes
+Route::post('/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
+Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
+Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
 
 // About page
 Route::get('/about', function () {

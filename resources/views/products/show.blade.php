@@ -45,11 +45,16 @@
                     </button>
                 </form>
 
-                <!-- Buy Now Button -->
-                <button onclick="window.location='{{ route('products.show', $product->id) }}';"
-                    class="flex-1 flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-black text-lg lg:text-xl font-semibold px-6 py-3 rounded-lg shadow-md transition hover:scale-105">
-                    ⚡ Buy Now
-                </button>
+                <!-- Buy Now Form (Stripe Checkout) -->
+                <form action="{{ route('payment.checkout') }}" method="POST" class="flex-1">
+                    @csrf
+                    <input type="hidden" name="name" value="{{ $product->name }}">
+                    <input type="hidden" name="price" value="{{ $product->price }}">
+                    <button type="submit"
+                        class="flex w-full items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white text-lg lg:text-xl font-semibold px-6 py-3 rounded-lg shadow-md transition hover:scale-105">
+                        ⚡ Buy Now
+                    </button>
+                </form>
 
                 <!-- Back Button -->
                 <a href="{{ route('products.index') }}"
