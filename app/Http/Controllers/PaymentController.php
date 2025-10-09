@@ -1,10 +1,10 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
-use Stripe\Exception\ApiErrorException;
 
 class PaymentController extends Controller
 {
@@ -12,34 +12,47 @@ class PaymentController extends Controller
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        // Example: Single product checkout
-        $session = Session::create([
-            'payment_method_types' => ['card'],
-            'line_items' => [[
+        $amount = $request->input('amount'); // total amount in rupees
+        $amount_cents = $amount * 100; // convert to cents (paise)
+
+        $cart = session('cart', []);
+
+        $line_items = [];
+
+        foreach ($cart as $id => $item) {
+            $line_items[] = [
                 'price_data' => [
                     'currency' => 'inr',
                     'product_data' => [
-                        'name' => $request->name,
+                        'name' => $item['name'],
+                        'images' => [$item['image']],
                     ],
-                    'unit_amount' => $request->price * 100,
+                    'unit_amount' => $item['price'] * 100, // Stripe amount in paise
                 ],
-                'quantity' => 1,
-            ]],
+                'quantity' => $item['quantity'],
+            ];
+        }
+
+        $checkout_session = Session::create([
+            'payment_method_types' => ['card'],
+            'line_items' => $line_items,
             'mode' => 'payment',
             'success_url' => route('payment.success'),
             'cancel_url' => route('payment.cancel'),
         ]);
 
-        return redirect($session->url);
+        return redirect($checkout_session->url);
     }
 
     public function success()
     {
-        return "Payment Successful!";
+        // Clear cart
+        session()->forget('cart');
+        return view('payment.success');
     }
 
     public function cancel()
     {
-        return "Payment Cancelled!";
+        return view('payment.cancel');
     }
 }

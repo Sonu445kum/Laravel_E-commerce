@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ContactController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,10 @@ Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payme
 
 // Static Pages
 Route::view('/about', 'about')->name('about');
-Route::view('/contact', 'contact')->name('contact');
+
+// Contact Page — GET & POST for form
+Route::get('/contact', [ContactController::class, 'show'])->name('contact'); // show contact page
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send'); // handle form submission
 
 /*
 |--------------------------------------------------------------------------

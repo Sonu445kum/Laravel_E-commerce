@@ -1,0 +1,92 @@
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #9636b0, #cd39db);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    margin-bottom: 50px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    animation: fadeIn 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+/* Info Cards */
+.info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card p {
+    color: #555;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.stat h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-cards, .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+}

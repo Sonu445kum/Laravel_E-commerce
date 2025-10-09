@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Custom About Page CSS -->
+    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
+
+
+
     <style>
         /* Background animation for subtle motion */
         @keyframes gradientMove {
@@ -14,16 +23,15 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* body, nav {
-            background: linear-gradient(135deg, #869496ff, #cbbbe3ff, #eaa7beff);
-            background-size: 400% 400%;
-            animation: gradientMove 15s ease infinite;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-        } */
-
+        /* Main layout styling */
         main, footer, header {
             width: 100%;
+        }
+
+        /* Navbar specific styling */
+        nav.navbar {
+            font-family: 'Poppins', sans-serif;
+            background-color: #316fccff; /* tumhara custom navbar color */
         }
     </style>
 </head>
