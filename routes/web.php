@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\ContactController; 
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +13,19 @@ use App\Http\Controllers\ContactController;
 |--------------------------------------------------------------------------
 */
 
-// Homepage — All Products
-Route::get('/', [ProductController::class, 'index'])->name('products.index');
+// Landing Page (Main Entry)
+Route::get('/', function () {
+    return view('landing');
+})->name('landing');
+
+// Shop Page — All Products (Home Page)
+Route::get('/shop', [ProductController::class, 'index'])->name('shop');
 
 // Single Product Page
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 // Cart Management
-Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index'); //  updated
+Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index');
 Route::post('/cart/add/{id}', [ProductController::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/remove/{id}', [ProductController::class, 'removeFromCart'])->name('cart.remove');
 
@@ -35,9 +40,9 @@ Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payme
 // Static Pages
 Route::view('/about', 'about')->name('about');
 
-// Contact Page — GET & POST for form
-Route::get('/contact', [ContactController::class, 'show'])->name('contact'); // show contact page
-Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send'); // handle form submission
+// Contact Page — GET & POST
+Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
 /*
 |--------------------------------------------------------------------------

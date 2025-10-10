@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
+
 
     <!-- Footer CSS -->
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">

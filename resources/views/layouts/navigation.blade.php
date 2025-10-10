@@ -5,7 +5,7 @@
 
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="{{ route('products.index') }}" class="flex items-center space-x-2">
+                <a href="{{ route('shop') }}" class="flex items-center space-x-2">
                     <img src="{{ asset('images/ecommerceLogo.png') }}" alt="EcommerceApp" class="w-8 h-6">
                     <span class="text-2xl md:text-3xl font-extrabold text-white drop-shadow-lg">EcommerceApp</span>
                 </a>
@@ -15,8 +15,8 @@
             <div class="flex items-center space-x-8 lg:space-x-10">
 
                 <!-- Links -->
-                <a href="{{ route('products.index') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Home</a>
-                <a href="{{ route('products.index') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Shop</a>
+                <a href="{{ route('shop') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Home</a>
+                <a href="{{ route('shop') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Shop</a>
                 <a href="{{ route('about') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">About</a>
                 <a href="{{ route('contact') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Contact</a>
 

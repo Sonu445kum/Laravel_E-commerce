@@ -1,0 +1,31 @@
+/* landing.css */
+
+/* Hide all slides initially */
+.slide {
+    display: none;
+}
+
+/* Show active slide */
+.active {
+    display: block;
+}
+
+/* Body styling */
+body {
+    overflow-x: hidden;
+    background-color: #f3f4f6; /* Tailwind gray-100 equivalent */
+}
+
+/* Overlay styling */
+.overlay-content {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+/* Button hover effect */
+.shop-btn {
+    transition: background-color 0.3s ease;
+}
+.shop-btn:hover {
+    background-color: #ca8a04; /* Tailwind yellow-600 equivalent */
+}
