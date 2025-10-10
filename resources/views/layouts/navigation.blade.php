@@ -13,6 +13,14 @@
 
             <!-- Nav Links & Cart & Auth -->
             <div class="flex items-center space-x-8 lg:space-x-10">
+                <!-- Search Form -->
+                <form action="{{ route('shop') }}" method="GET" class="flex items-center">
+                    <input type="text" name="search" placeholder="Search products..."
+                        class="px-3 py-1 rounded-l-md border-none focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <button type="submit" class="bg-yellow-500 text-black px-3 py-1 rounded-r-md hover:bg-yellow-400 transition-colors">
+                        🔍
+                    </button>
+                </form>
 
                 <!-- Links -->
                 <a href="{{ route('shop') }}" class="text-white hover:text-yellow-300 font-medium transition-colors duration-300 px-2 lg:px-3">Home</a>

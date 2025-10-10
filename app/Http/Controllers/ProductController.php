@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     /**
-     * Display all products
+     * Display all products (with optional search)
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()->get();
+        $query = Product::query();
+
+        // Search functionality
+        if ($request->has('search') && !empty($request->search)) {
+            $searchTerm = $request->search;
+            $query->where('name', 'LIKE', "%{$searchTerm}%")
+                  ->orWhere('description', 'LIKE', "%{$searchTerm}%");
+        }
+
+        $products = $query->latest()->get();
+
         return view('products.index', compact('products'));
     }
 
@@ -50,7 +60,6 @@ class ProductController extends Controller
         // Update the session
         session()->put('cart', $cart);
 
-        // ✅ Redirect to cart page after adding
         return redirect()->route('cart.index')->with('success', "{$product->name} added to cart!");
     }
 
