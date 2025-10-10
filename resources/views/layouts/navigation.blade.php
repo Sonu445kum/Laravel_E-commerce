@@ -24,38 +24,38 @@
                 <a href="{{ route('cart.index') }}" class="relative text-white hover:text-yellow-300 transition px-2 lg:px-3">
                     🛒 Cart
                     @if(session('cart') && count(session('cart')) > 0)
-                        <span class="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                            {{ count(session('cart')) }}
-                        </span>
+                    <span class="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                        {{ count(session('cart')) }}
+                    </span>
                     @endif
                 </a>
 
                 <!-- Auth / Admin -->
                 @auth
-                    @if(auth()->user()->role === 'admin')
-                        <a href="{{ route('admin.products.index') }}"
-                            class="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow-md hover:scale-105 hover:bg-yellow-300 transition-all duration-300">
-                            Admin
-                        </a>
-                    @endif
+                @if(auth()->user()->role === 'admin')
+                <a href="{{ route('admin.products.index') }}"
+                    class="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow-md hover:scale-105 hover:bg-yellow-300 transition-all duration-300">
+                    Admin
+                </a>
+                @endif
 
-                    <span class="text-white font-medium px-2 lg:px-3">{{ auth()->user()->name }}</span>
+                <span class="text-white font-medium px-2 lg:px-3">{{ auth()->user()->name }}</span>
 
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                       class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
-                        Logout
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
+                    Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
                 @else
-                    <a href="{{ route('login') }}"
-                       class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
-                        Login
-                    </a>
-                    <a href="{{ route('register') }}"
-                       class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
-                        Register
-                    </a>
+                <a href="{{ route('login') }}"
+                    class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
+                    Login
+                </a>
+                <a href="{{ route('register') }}"
+                    class="px-4 py-2 bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/30 shadow-lg transition-all duration-300">
+                    Register
+                </a>
                 @endauth
 
             </div>

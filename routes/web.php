@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,12 @@ use App\Http\Controllers\ContactController;
 |--------------------------------------------------------------------------
 */
 
-// Landing Page (Main Entry)
+// Landing Page
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
-// Shop Page — All Products (Home Page)
+// Shop Page
 Route::get('/shop', [ProductController::class, 'index'])->name('shop');
 
 // Single Product Page
@@ -40,9 +42,24 @@ Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payme
 // Static Pages
 Route::view('/about', 'about')->name('about');
 
-// Contact Page — GET & POST
+// Contact Page
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes (Custom Login & Signup)
+|--------------------------------------------------------------------------
+*/
+
+// Login Routes
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Signup Routes
+Route::get('/register', [SignupController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [SignupController::class, 'register']);
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +93,7 @@ Route::middleware(['auth', 'isAdmin'])
 
 /*
 |--------------------------------------------------------------------------
-| Auth Routes (Laravel Breeze)
+| Disable default Laravel auth routes
 |--------------------------------------------------------------------------
 */
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';  <-- Commented out to use only custom auth pages
